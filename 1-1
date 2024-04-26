@@ -1,0 +1,39 @@
+import math
+
+
+def main():
+    # Отримання 3 від'ємних цілих чисел від користувача
+    a = get_negative_integer("a")
+    b = get_negative_integer("b")
+    c = get_negative_integer("c")
+
+
+    # Обчислення значення Z
+    z = calculate_z(a, b, c)
+
+
+    # Виведення результату
+    print(f"Значення a: {a}")
+    print(f"Значення b: {b}")
+    print(f"Значення c: {c}")
+    print(f"Результат обчислення Z: {z}")
+
+
+def get_negative_integer(name):
+    while True:
+        try:
+            value = int(input(f"Введіть {name}: "))
+            if value < 0:
+                return value
+            else:
+                print(f"{name} повинно бути від'ємним числом!")
+        except ValueError:
+            print(f"{name} повинно бути цілим числом!")
+
+
+def calculate_z(a, b, c):
+    return math.sqrt(a ** 4) + a * b / math.sqrt(a ** 4) + a * b + c
+
+
+if __name__ == "__main__":
+    main()
